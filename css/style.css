@@ -910,3 +910,171 @@
 /*** copyright end ***/
 
 
+.feature-item .feature-icon i {
+    color: gray;
+    transition: color 0.3s ease;
+}
+
+.feature-item:hover .feature-icon i {
+    color: #f89b34; /* Bootstrap primary color */
+}
+
+/* Price and button */
+.feature-item .price, 
+.feature-item .btn-learn-more {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.feature-item .price {
+    opacity: 1;
+}
+
+.feature-item .btn-learn-more {
+    display: none;
+    opacity: 0;
+}
+
+/* On hover, hide price and show the button */
+.feature-item:hover .price {
+    opacity: 0;
+}
+
+.feature-item:hover .btn-learn-more {
+    display: block;
+    opacity: 1;
+}
+
+/* Keep the container size consistent */
+.feature-item {
+    position: relative;
+    padding-bottom: 60px; /* Adjust padding to make room for the button */
+    min-height: 400px;
+}
+
+.chatbox {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 10px;
+    animation: slideIn 0.3s ease-out;
+  }
+  .chatbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  .chatbox-body {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px 0;
+    animation: fadeIn 0.3s ease-in;
+  }
+  .chatbox-footer {
+    display: flex;
+    align-items: center;
+  }
+  .chatbox-footer input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  .chatbox-footer .btn-send {
+    background: #007bff;
+    color: white;
+    border: none;
+  }
+  .chatbox-footer .btn-send:hover {
+    background: #0056b3;
+  }
+  .message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    display: inline-block;
+    clear: both;
+    animation: fadeInMessage 0.5s ease-in;
+  }
+  .message.user {
+    background-color: #f89b34;
+    color: white;
+    text-align: right;
+    float: right;
+  }
+  .message.bot {
+    background-color: #f1f1f1;
+    color: black;
+    text-align: left;
+    float: left;
+  }
+  .message:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInMessage {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .chatbox-footer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .chatbox-footer input.bo {
+    flex: 1;
+    margin-right: 2px;
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1; /* Background color to match your design */
+  }
+  
+  .chatbox-footer .btn-send {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  .chatbox-footer .btn-send:hover {
+    background: #0056b3;
+  }

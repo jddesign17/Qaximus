@@ -118,19 +118,27 @@
     });
 
 
-   // Back to top button
-   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
-
+ 
 
 })(jQuery);
 
+
+function toggleChatbox() {
+    $('#chatbox').fadeToggle();
+  }
+
+  function sendMessage() {
+    const message = $('#chatInput').val();
+    if (message) {
+      $('#chatboxBody').append(`
+        <div class="message user">
+          <strong>You:</strong> ${message}
+        </div>
+        <div class="message bot">
+          <strong>Bot:</strong> Hi, we will be reaching out to you soon!
+        </div>
+      `);
+      $('#chatInput').val('');
+      $('#chatboxBody').stop().animate({ scrollTop: $('#chatboxBody')[0].scrollHeight }, 1000);
+    }
+  }
